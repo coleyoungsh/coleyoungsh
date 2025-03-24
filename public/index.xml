@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Cole Young</title>
-    <link>https://cole.young.sh/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Home on Cole Young</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Cole Young.</copyright>
     <lastBuildDate>Sun, 23 Mar 2025 21:53:40 -0400</lastBuildDate>
-    <atom:link href="https://cole.young.sh/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Offline Email With Aerc</title>
-      <link>https://cole.young.sh/offline-email-with-aerc/</link>
+      <link>http://localhost:1313/offline-email-with-aerc/</link>
       <pubDate>Sun, 23 Mar 2025 21:53:40 -0400</pubDate>
-      <guid>https://cole.young.sh/offline-email-with-aerc/</guid>
+      <guid>http://localhost:1313/offline-email-with-aerc/</guid>
       <description>&lt;p&gt;Building an offline first email system the Unix way.&lt;/p&gt;&#xA;&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://aerc-mail.org/&#34;&gt;aerc&lt;/a&gt; - mail client&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://notmuchmail.org/&#34;&gt;notmuch&lt;/a&gt; - index + search mail&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://isync.sourceforge.io/mbsync.html&#34;&gt;mbsync&lt;/a&gt; - download mail&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/marlam/msmtp&#34;&gt;msmtp&lt;/a&gt; - send mail + send queue&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gitlab.com/shackra/goimapnotify&#34;&gt;goimapnotify&lt;/a&gt; - mailbox watcher&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.passwordstore.org/&#34;&gt;pass&lt;/a&gt; - password manager&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/cruegge/pam-gnupg&#34;&gt;pam-gnupg&lt;/a&gt; - unlock gpg keys&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/lucc/khard&#34;&gt;khard&lt;/a&gt; - contact management&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/jelmer/xandikos&#34;&gt;xandikos&lt;/a&gt; - contact server (optional)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/pimutils/vdirsyncer&#34;&gt;vdirsyncer&lt;/a&gt; - contact sync (optional)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;secret-management&#34;&gt;Secret Management&lt;/h1&gt;&#xA;&lt;p&gt;To avoid plain text secrets in config files. This guide uses pass to store all&#xA;the secrets these applications will need for the setup. Any password manager&#xA;that can be invoked via the command line will do so long as it prints the&#xA;password to standard out. I won&amp;rsquo;t go over how to setup pass because that&amp;rsquo;s out&#xA;of the scope of this guide. It&amp;rsquo;s a well documented project.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Rocks</title>
-      <link>https://cole.young.sh/rocks/</link>
+      <link>http://localhost:1313/rocks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://cole.young.sh/rocks/</guid>
+      <guid>http://localhost:1313/rocks/</guid>
       <description>&lt;h1 id=&#34;stuff-that-rocks&#34;&gt;Stuff that rocks&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;A collection of things that I think are neat or that have a similar set of&#xA;philosophies to my own.&lt;/p&gt;&#xA;&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;&#xA;&lt;h3 id=&#34;email&#34;&gt;email&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aerc-mail.org/&#34;&gt;aerc&lt;/a&gt; - terminal mail client&lt;/p&gt;&#xA;&lt;h3 id=&#34;window-managers&#34;&gt;window managers&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dwm.suckless.org/&#34;&gt;dwm&lt;/a&gt; - dynamic window manager for X&lt;/p&gt;&#xA;&lt;h2 id=&#34;books&#34;&gt;Books&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/37590384-foundations-of-flavor&#34;&gt;The Noma Guide to Fermentation&lt;/a&gt; - René Redzepi, David Zilber&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/13598307-the-art-of-fermentation?from_search=true&amp;amp;from_srp=true&amp;amp;qid=psoqbI9Q4n&amp;amp;rank=1&#34;&gt;The Art of Fermentation&lt;/a&gt; - Sandor Ellix Katz&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.goodreads.com/book/show/101255.On_Food_and_Cooking?from_search=true&amp;amp;from_srp=true&amp;amp;qid=HIFkkuzJBw&amp;amp;rank=1&#34;&gt;On Food and Cooking&lt;/a&gt; - Harold McGee&lt;/p&gt;&#xA;&lt;h2 id=&#34;bands&#34;&gt;Bands&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Emarosa&#34;&gt;emarosa&lt;/a&gt; - post-hardcore&lt;/p&gt;</description>
     </item>
   </channel>
