@@ -10,7 +10,7 @@ title = "Home"
 
 Email: cole@young.sh ([pgp-key](pub.key))
 
-Git server: `$ ssh git.young.sh`
+Git server: `ssh git.young.sh`
 
 Github: [coleyoungsh](https://github.com/coleyoungsh) (don't use much anymore)
 
