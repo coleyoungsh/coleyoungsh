@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
-<title>Offline Email With Aerc | Cole Young&#39;s Webpage</title>
+<link rel="shortcut icon" href="https://cole.young.sh/images/favicon.png" />
+<title>Offline Email With Aerc | Cole Young</title>
 <meta name="title" content="Offline Email With Aerc" />
 <meta name="description" content="Aerc mail client setup for offline email, indexing with notmuch,and contact sync" />
 <meta name="keywords" content="cli,email,tutorial," />
 
 
-<meta property="og:url" content="http://localhost:1313/offline-email-with-aerc/">
-  <meta property="og:site_name" content="Cole Young&#39;s Webpage">
+<meta property="og:url" content="https://cole.young.sh/offline-email-with-aerc/">
+  <meta property="og:site_name" content="Cole Young">
   <meta property="og:title" content="Offline Email With Aerc">
   <meta property="og:description" content="Aerc mail client setup for offline email, indexing with notmuch,and contact sync">
   <meta property="og:locale" content="en_US">
@@ -24,13 +24,13 @@
     <meta property="article:tag" content="Cli">
     <meta property="article:tag" content="Email">
     <meta property="article:tag" content="Tutorial">
-    <meta property="og:image" content="http://localhost:1313/images/share.png">
+    <meta property="og:image" content="https://cole.young.sh/images/share.png">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:image" content="https://cole.young.sh/images/share.png">
   <meta name="twitter:title" content="Offline Email With Aerc">
   <meta name="twitter:description" content="Aerc mail client setup for offline email, indexing with notmuch,and contact sync">
 
@@ -41,8 +41,8 @@
   <meta itemprop="description" content="Aerc mail client setup for offline email, indexing with notmuch,and contact sync">
   <meta itemprop="datePublished" content="2025-03-23T21:53:40-04:00">
   <meta itemprop="dateModified" content="2025-03-23T21:53:40-04:00">
-  <meta itemprop="wordCount" content="1185">
-  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="wordCount" content="1498">
+  <meta itemprop="image" content="https://cole.young.sh/images/share.png">
   <meta itemprop="keywords" content="Cli,Email,Tutorial">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
@@ -153,6 +153,7 @@
       color: var(--code-color);
       padding-left: 20px;
       font-style: italic;
+      background-color: var(--code-background-color);
   }
 
   footer {
@@ -228,17 +229,32 @@
       --text-color: #cdd6f4;
       --link-color: #89b4fa;
       --visited-color: #cba6f7;
-      --code-background-color: #11111b;
+      --code-background-color: #181825;
       --code-color: #cdd6f4;
       --blockquote-color: #bac2de;
     }
   }
+
+  code {
+      font-family: Jetbrains Mono, sans-serif;
+      color: var(--code-color);
+      padding: 2px;
+      border-radius: 3px;
+  }
+
+  pre {
+      background-color: var(--code-background-color);
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+  }
+
 </style>
 </head>
 
 <body>
   <header><a href="/" class="title">
-  <h2>Cole Young&#39;s Webpage</h2>
+  <h2>Cole Young</h2>
 </a>
 <nav><a href="/">Home</a>
 
@@ -261,7 +277,7 @@
 </p>
 
 <content>
-  <p>Build an offline first email system the unix way</p>
+  <p>Building an offline first email system the Unix way.</p>
 <h2 id="applications">Applications</h2>
 <ul>
 <li><a href="https://aerc-mail.org/">aerc</a> - mail client</li>
@@ -269,14 +285,26 @@
 <li><a href="https://isync.sourceforge.io/mbsync.html">mbsync</a> - download mail</li>
 <li><a href="https://github.com/marlam/msmtp">msmtp</a> - send mail + send queue</li>
 <li><a href="https://gitlab.com/shackra/goimapnotify">goimapnotify</a> - mailbox watcher</li>
+<li><a href="https://www.passwordstore.org/">pass</a> - password manager</li>
+<li><a href="https://github.com/cruegge/pam-gnupg">pam-gnupg</a> - unlock gpg keys</li>
 <li><a href="https://github.com/lucc/khard">khard</a> - contact management</li>
-<li><a href="https://github.com/pimutils/vdirsyncer">vdirsyncer</a> - contact sync</li>
 <li><a href="https://github.com/jelmer/xandikos">xandikos</a> - contact server (optional)</li>
+<li><a href="https://github.com/pimutils/vdirsyncer">vdirsyncer</a> - contact sync (optional)</li>
 </ul>
+<h1 id="secret-management">Secret Management</h1>
+<p>To avoid plain text secrets in config files. This guide uses pass to store all
+the secrets these applications will need for the setup. Any password manager
+that can be invoked via the command line will do so long as it prints the
+password to standard out. I won&rsquo;t go over how to setup pass because that&rsquo;s out
+of the scope of this guide. It&rsquo;s a well documented project.</p>
 <h1 id="storing-mail-offline">Storing Mail Offline</h1>
+<p>Most mail clients show you your mail by logging into the server and displaying
+it from there. With mbsync we&rsquo;ll be able to download it from the server so that
+we can view our inbox without an internet connection.</p>
 <h2 id="mbsync">mbsync</h2>
-<p>Sample configuration for mbsync using an external command to obtain the users
-imap password using pass</p>
+<p>This is a sample configuration for mbsync calling an external command to obtain
+the users imap password using pass.</p>
+<p><code>~/.mbsyncrc</code></p>
 <pre tabindex="0"><code>IMAPStore user@domain.com-remote
 Host mail.domain.com
 Port 993
@@ -304,9 +332,13 @@ created manually. mbsync will not create it.</p>
 </code></pre><p>To download mail for all configured inboxes</p>
 <pre tabindex="0"><code>$ mbsync -Va
 </code></pre><p>aerc can read from a maildir directly but setting up notmuch will make it
-faster, especially with large amounts of mail</p>
+faster, especially with large amounts of mail.</p>
 <h2 id="notmuch">notmuch</h2>
-<pre tabindex="0"><code class="language-~/.notmuch-config" data-lang="~/.notmuch-config">[database]
+<p>Here is a sample notmuch config. Notice the setting <code>synchronize_flags=true</code>.
+This will allow us to configure aerc to read from notmuch like maildir without
+a query map.</p>
+<p><code>~/.notmuch-config</code></p>
+<pre tabindex="0"><code>[database]
 path=.local/share/mail # path to where mbsync is downloading mail
 
 [user]
@@ -322,29 +354,14 @@ ignore=.uidvalidity;.mbsyncstate;msmtpq.log
 synchronize_flags=true
 </code></pre><p>To index with notmuch</p>
 <pre tabindex="0"><code>$ notmuch new
-</code></pre><h2 id="mailbox-sync-at-login">Mailbox Sync at Login</h2>
-<p>goimapnotify is going to monitor for incoming mail once logged in, however, it
-only triggers when new mail is recieved. If mail is recieved while a user was
-logged out or a machine was off it needs to be synced manually. Once at login
-will suffice.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-~/.config/systemd/user/mbsync.service" data-lang="~/.config/systemd/user/mbsync.service"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Mailbox synchronization service</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">oneshot</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/bin/mbsync -Va &amp;&amp; notmuch new</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">default.target</span>
-</span></span></code></pre></div><p>enabling this user service will sync all mailboxes configured for mbsync and
-indexed with notmuch</p>
-<pre tabindex="0"><code>$ systemctl --user enable mbsync.service
 </code></pre><h1 id="sending-mail-offline">Sending Mail Offline</h1>
-<p>aerc itself can send mail via smtp. To be able to reply to mail and queue it
-for sending without a network connection we&rsquo;ll setup msmtp.</p>
+<p>aerc itself can send mail via smtp. However, it can only do so if you&rsquo;re
+connected to your mail server. To be able to reply to mail and queue it for
+sending without a network connection we&rsquo;ll setup msmtp.</p>
 <h2 id="msmtp">msmtp</h2>
-<p>msmtp configuration example using pass for smtp password</p>
-<pre tabindex="0"><code class="language-~/.config/msmtp/config" data-lang="~/.config/msmtp/config"># Set default values for all following accounts.
+<p>Sample configuration for msmtp using pass for the user&rsquo;s smtp password.</p>
+<p><code>~/.config/msmtp/config</code></p>
+<pre tabindex="0"><code># Set default values for all following accounts.
 defaults
 auth           on
 tls            on
@@ -365,67 +382,108 @@ I copied this to <code>/usr/local/bin</code> so it would be in my path.</p>
 <pre tabindex="0"><code>$ sudo cp /usr/share/doc/msmtp/examples/msmtpq/msmtpq /usr/local/bin/
 </code></pre><pre tabindex="0"><code>$ sudo cp /usr/share/doc/msmtp/examples/msmtpq/msmtp-queue /usr/local/bin/
 </code></pre><p>Then change the default directories for logging and queue location. Also, setup
-some aliases to interact with the queue</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-~/.zshrc" data-lang="~/.zshrc"><span style="display:flex;"><span><span style="color:#75715e"># msmtpq dirs</span>
-</span></span><span style="display:flex;"><span>export MSMTPQ_Q<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_DATA_HOME<span style="color:#66d9ef">:-</span>$HOME/.local/share<span style="color:#e6db74">}</span><span style="color:#e6db74">/mail/queue&#34;</span>
-</span></span><span style="display:flex;"><span>export MSMTPQ_LOG<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_DATA_HOME<span style="color:#66d9ef">:-</span>$HOME/.local/share<span style="color:#e6db74">}</span><span style="color:#e6db74">/mail/queue/msmtpq.log&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>alias mq<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;msmtp-queue&#39;</span> <span style="color:#75715e"># view queue</span>
-</span></span><span style="display:flex;"><span>alias mqf<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;msmtp-queue -r&#39;</span> <span style="color:#75715e"># flush queue (send all)</span>
-</span></span></code></pre></div><h1 id="realtime-mail-monitoring">Realtime Mail Monitoring</h1>
+some aliases to interact with the queue more easily.</p>
+<p><code>~/.zshrc</code> or <code>~/.bashrc</code> or whatever shell you&rsquo;re using.</p>
+<pre tabindex="0"><code># msmtpq dirs
+export MSMTPQ_Q=&#34;${XDG_DATA_HOME:-$HOME/.local/share}/mail/queue&#34;
+export MSMTPQ_LOG=&#34;${XDG_DATA_HOME:-$HOME/.local/share}/mail/queue/msmtpq.log&#34;
+
+alias mq=&#39;msmtp-queue&#39; # view queue
+alias mqf=&#39;msmtp-queue -r&#39; # flush queue (send all)
+</code></pre><h1 id="realtime-mail-monitoring">Realtime Mail Monitoring</h1>
 <p>Typically setups like this poll the server every x amount of minutes to check
 for new mail. This is inefficient. We can use imapnotify to trigger actions
 immediately.</p>
 <h2 id="goimapnotify">goimapnotify</h2>
-<p>Simple imapnotify configuration using pass for imap password</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">configurations</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">host</span>: <span style="color:#ae81ff">mail.domain.com</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">port</span>: <span style="color:#ae81ff">993</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tls</span>: <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">tlsOptions</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">rejectUnauthorized</span>: <span style="color:#66d9ef">true</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">starttls</span>: <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">username</span>: <span style="color:#ae81ff">user@domain.com</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">passwordCMD</span>: <span style="color:#e6db74">&#34;pass domain.com/user&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">xoAuth2</span>: <span style="color:#66d9ef">false</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">boxes</span>:
-</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">mailbox</span>: <span style="color:#ae81ff">INBOX</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">onNewMail</span>: <span style="color:#e6db74">&#34;mbsync user@domain.com:INBOX &amp;&amp; notmuch new&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">onNewMailPost</span>: <span style="color:#e6db74">&#34;mbsyncnotify user@domain.com&#34;</span>
-</span></span></code></pre></div><p>This will also need a user service enabled to run at login, we&rsquo;ll enable it for our configuration. In this case <code>mail.yaml</code></p>
+<p>Here is a sample imapnotify configuration using pass for the user&rsquo;s imap
+password</p>
+<p><code>~/.config/imapnotify/mail.yaml</code></p>
+<pre tabindex="0"><code>configurations:
+  - host: mail.domain.com
+    port: 993
+    tls: true
+    tlsOptions:
+      rejectUnauthorized: true
+      starttls: false
+    username: user@domain.com
+    passwordCMD: &#34;pass domain.com/user&#34;
+    xoAuth2: false
+    boxes:
+      - mailbox: INBOX
+        onNewMail: &#34;mbsync user@domain.com:INBOX &amp;&amp; notmuch new&#34;
+        onNewMailPost: &#34;mbsyncnotify user@domain.com&#34;
+</code></pre><p>This will also need a user service enabled to run at login, we&rsquo;ll enable it for our configuration. In this case <code>mail.yaml</code></p>
 <pre tabindex="0"><code>$ systemctl --user enable goimapnotify@mail.service
 </code></pre><h2 id="mbsyncnotify">mbsyncnotify</h2>
 <p>More than likely desktop notifications are desired. I use a script called
 <code>mbsyncnotify</code> for this. It&rsquo;s called from <code>onNewMailPost</code> in our imapnotify
 configuration. In my case:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
-</span></span><span style="display:flex;"><span>new<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>find<span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>		<span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/.local/share/mail/</span>$1<span style="color:#e6db74">/&#34;</span><span style="color:#f92672">[</span>Ii<span style="color:#f92672">][</span>Nn<span style="color:#f92672">][</span>Bb<span style="color:#f92672">][</span>Oo<span style="color:#f92672">][</span>Xx<span style="color:#f92672">]</span>/new/ <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>		-type f 2&gt; /dev/null<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>	newcount<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>echo <span style="color:#e6db74">&#34;</span>$new<span style="color:#e6db74">&#34;</span> | sed <span style="color:#e6db74">&#39;/^\s*$/d&#39;</span> | wc -l<span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span> in
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$((</span>newcount &gt; <span style="color:#ae81ff">5</span><span style="color:#66d9ef">))</span> <span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>  	echo <span style="color:#e6db74">&#34;</span>$newcount<span style="color:#e6db74"> new mail for </span>$1<span style="color:#e6db74">.&#34;</span>
-</span></span><span style="display:flex;"><span>		notify-send <span style="color:#e6db74">&#34;New Mail!&#34;</span> <span style="color:#e6db74">&#34;󰶊  </span>$newcount<span style="color:#e6db74"> new mail(s) in \`</span>$1<span style="color:#e6db74">\` account.&#34;</span>
-</span></span><span style="display:flex;"><span>		;;
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">$((</span>newcount &gt; <span style="color:#ae81ff">0</span><span style="color:#66d9ef">))</span> <span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>		echo <span style="color:#e6db74">&#34;</span>$newcount<span style="color:#e6db74"> new mail for </span>$1<span style="color:#e6db74">.&#34;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> file in $new; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>		  <span style="color:#75715e"># Extract and decode subject and sender from mail.</span>
-</span></span><span style="display:flex;"><span>			subject<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>sed -n <span style="color:#e6db74">&#34;/^Subject:/ s|Subject: *|| p&#34;</span> <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> |
-</span></span><span style="display:flex;"><span>				perl -CS -MEncode -ne <span style="color:#e6db74">&#39;print decode(&#34;MIME-Header&#34;, $_)&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>			from<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>sed -n <span style="color:#e6db74">&#34;/^From:/ s|From: *|| p&#34;</span> <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> |
-</span></span><span style="display:flex;"><span>				perl -CS -MEncode -ne <span style="color:#e6db74">&#39;print decode(&#34;MIME-Header&#34;, $_)&#39;</span><span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>			from<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>from% *<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> ; from<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>from%<span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> ; from<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>from#<span style="color:#ae81ff">\&#34;</span><span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>				notify-send <span style="color:#e6db74">&#34;  </span>$from<span style="color:#e6db74">:&#34;</span> <span style="color:#e6db74">&#34;</span>$subject<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>		;;
-</span></span><span style="display:flex;"><span>	*<span style="color:#f92672">)</span> echo <span style="color:#e6db74">&#34;No new mail for </span>$1<span style="color:#e6db74">.&#34;</span> ;;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
-</span></span></code></pre></div><h1 id="aerc-setup">aerc Setup</h1>
-<p>Here&rsquo;s the config that combines everything we just setup.</p>
-<pre tabindex="0"><code class="language-~/.config/aerc/accounts.conf" data-lang="~/.config/aerc/accounts.conf">[user@domain.com]
+<p><code>~/.local/bin/mbsyncnotify</code> (or somewhere in your path)</p>
+<pre tabindex="0"><code>#!/usr/bin/bash
+
+new=$(find\
+		&#34;$HOME/.local/share/mail/$1/&#34;[Ii][Nn][Bb][Oo][Xx]/new/ \
+		-type f 2&gt; /dev/null)
+	newcount=$(echo &#34;$new&#34; | sed &#39;/^\s*$/d&#39; | wc -l)
+case 1 in
+	$((newcount &gt; 5)) )
+  	echo &#34;$newcount new mail for $1.&#34;
+		notify-send &#34;New Mail!&#34; &#34;󰶊  $newcount new mail(s) in \`$1\` account.&#34;
+		;;
+	$((newcount &gt; 0)) )
+		echo &#34;$newcount new mail for $1.&#34;
+		for file in $new; do
+		  # Extract and decode subject and sender from mail.
+			subject=&#34;$(sed -n &#34;/^Subject:/ s|Subject: *|| p&#34; &#34;$file&#34; |
+				perl -CS -MEncode -ne &#39;print decode(&#34;MIME-Header&#34;, $_)&#39;)&#34;
+			from=&#34;$(sed -n &#34;/^From:/ s|From: *|| p&#34; &#34;$file&#34; |
+				perl -CS -MEncode -ne &#39;print decode(&#34;MIME-Header&#34;, $_)&#39;)&#34;
+			from=&#34;${from% *}&#34; ; from=&#34;${from%\&#34;}&#34; ; from=&#34;${from#\&#34;}&#34;
+				notify-send &#34;  $from:&#34; &#34;$subject&#34;
+		done
+		;;
+	*) echo &#34;No new mail for $1.&#34; ;;
+esac
+</code></pre><h2 id="mailbox-sync-at-login">Mailbox Sync at Login</h2>
+<p>goimapnotify is going to monitor for incoming mail once logged in, however, it
+only triggers when new mail is recieved. If mail is recieved while a user was
+logged out or a machine was off it needs to be synced manually. Once at login
+will suffice.</p>
+<p><code>~/.config/systemd/user/mbsync.service</code></p>
+<pre tabindex="0"><code>[Unit]
+Description=Mailbox synchronization service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/mbsync -Va &amp;&amp; notmuch new
+
+[Install]
+WantedBy=default.target
+</code></pre><p>enabling this user service will sync all mailboxes configured for mbsync and
+indexed with notmuch</p>
+<pre tabindex="0"><code>$ systemctl --user enable mbsync.service
+</code></pre><h1 id="gpg-key-unlocking">GPG key unlocking</h1>
+<p>I sign all of my emails and attach my public key to them. It can be a real
+pain to keep unlocking your key every time you want to read an email someone
+sent you with encryption. I utilize pam-gnupg to unlock my key when I log in to
+my machine. This has the added benefit of having the key unlocked for pass so
+all these components can function without you having to type in a password more
+than once.</p>
+<p>Here&rsquo;s a few commands that will set that up. Note that this assumes you&rsquo;re
+logging in from a TTY on an Arch Linux system. Your configuration details may
+need to be different from what I provide here if you&rsquo;re running something else.</p>
+<pre tabindex="0"><code>$ echo &#34;auth     optional  pam_gnupg.so store-only&#34; | sudo tee -a /etc/pam.d/system-local-login
+$ echo &#34;session  optional  pam_gnupg.so&#34; | sudo tee -a /etc/pam.d/system-local-login
+$ echo &#34;allow-preset-passphrase&#34; &gt;&gt; ~/.gnupg/gpg-agent.conf
+$ echo &#34;default-cache-ttl 34560000&#34; &gt;&gt; ~/.gnupg/gpg-agent.conf
+$ echo &#34;max-cache-ttl 34560000&#34; &gt;&gt; ~/.gnupg/gpg-agent.conf
+</code></pre><p>Don&rsquo;t blind copy and paste this last one, you&rsquo;ll need to fill in your email
+that matches your key.</p>
+<pre tabindex="0"><code>$ echo $(shell gpg -K --with-keygrip user@domain.com | tail -n2 | awk &#39;{ print $$3 }&#39;) &gt;&gt; ~/.pam-gnupg
+</code></pre><h1 id="aerc-setup">aerc Setup</h1>
+<p>Here&rsquo;s the aerc accounts config that combines everything we just setup.</p>
+<p><code>~/.config/aerc/accounts.conf</code></p>
+<pre tabindex="0"><code>[user@domain.com]
 source        = notmuch://~/.local/share/mail # use notmuch as backend
 maildir-store = ~/.local/share/mail # maildir mapped in notmuch
 maildir-account-path = user@domain.com # subdirectory of maildir for account
@@ -438,67 +496,36 @@ from          = User Name &lt;user@domain.com&gt;
 copy-to       = Sent
 cache-headers = true
 pgp-auto-sign = true
+pgp-attach-key = true
+pgp-self-encrypt = true
 pgp-opportunistic-encrypt=true
-</code></pre><h1 id="local-contacts">Local Contacts</h1>
-<p>aerc doesn&rsquo;t handle contacts on it&rsquo;s own, we use khard (command line vcard
+</code></pre><p>You can stop here if you don&rsquo;t care about email contacts.</p>
+<h1 id="local-contacts">Local Contacts</h1>
+<p>aerc doesn&rsquo;t handle contacts on it&rsquo;s own, we&rsquo;ll use khard (command line vcard
 utility) for this.</p>
+<p>I also like to combine address book providers to use notmuch and khard. I wrote about that <a href="https://man.sr.ht/~rjarry/aerc/integrations/combine-address-books.md">here</a> on the aerc wiki. If you&rsquo;d like to do that it&rsquo;s up to you but from here I&rsquo;ll go over the configuration for khard.</p>
 <h2 id="khard">khard</h2>
 <p>I didn&rsquo;t change anything in the default config except adding my path to where I
-wanted my contacts to be stored</p>
-<pre tabindex="0"><code class="language-~/.config/khard/khard.conf" data-lang="~/.config/khard/khard.conf">[addressbooks]
+wanted my contacts to be stored, it&rsquo;s right at the top.</p>
+<p><code>~/.config/khard/khard.conf</code></p>
+<pre tabindex="0"><code>[addressbooks]
 [[addressbook]]
 path = ~/.local/share/contacts/addressbook/
-
-[general]
-debug = no
-default_action = list
-# These are either strings or comma seperated lists
-editor = nvim, -i, NONE
-merge_editor = vimdiff
-
-[contact table]
-# display names by first or last name: first_name / last_name / formatted_name
-display = first_name
-# group by address book: yes / no
-group_by_addressbook = no
-# reverse table ordering: yes / no
-reverse = no
-# append nicknames to name column: yes / no
-show_nicknames = no
-# show uid table column: yes / no
-show_uids = yes
-# show kind table column: yes / no
-show_kinds = no
-# sort by first or last name: first_name / last_name / formatted_name
-sort = last_name
-# localize dates: yes / no
-localize_dates = yes
-# set a comma separated list of preferred phone number types in descending priority
-# or nothing for non-filtered alphabetical order
-preferred_phone_number_type = pref, cell, home
-# set a comma separated list of preferred email address types in descending priority
-# or nothing for non-filtered alphabetical order
-preferred_email_address_type = pref, work, personal
-
-[vcard]
-# extend contacts with your own private objects
-# these objects are stored with a leading &#34;X-&#34; before the object name in the vcard files
-# every object label may only contain letters, digits and the - character
-# example:
-#   private_objects = Jabber, Skype, Twitter
-# default: ,  (the empty list)
-# private_objects = Jabber, Skype, Twitter
-# preferred vcard version: 3.0 / 4.0
-# preferred_version = 3.0
-# Look into source vcf files to speed up search queries: yes / no
-search_in_source_files = no
-# skip unparsable vcard files: yes / no
-skip_unparsable = no
-</code></pre><h2 id="vdirsyncer">vdirsyncer</h2>
+</code></pre><p>You&rsquo;ll need to tell aerc to use khard as your address book provider.</p>
+<p>edit the <code>address-book-cmd</code> line in <code>~/.config/aerc/aerc.conf</code></p>
+<pre tabindex="0"><code>address-book-cmd=khard email -a addressbook --parsable --remove-first-line &#34;%s&#34;
+</code></pre><p>You can stop here if you don&rsquo;t care about contact sync.</p>
+<h2 id="vdirsyncer">vdirsyncer</h2>
 <p>After setting all that up I wanted a way to sync my contacts to my phone, for
-this I setup a carddav server and sync to it using vdirsyncer. This also uses
+this I setup a carddav server (xandikos) and sync to it using vdirsyncer. This also uses
 pass to authenticate.</p>
-<pre tabindex="0"><code class="language-~/.config/vdirsyncer/config" data-lang="~/.config/vdirsyncer/config">[general]
+<p>I won&rsquo;t go over to how to set up the server because there&rsquo;s a number of ways
+you can deploy it. You could also use <a href="https://syncthing.net/">syncthing</a> if
+you wanted to for this and forgo vdirsyncer all together.</p>
+<p>I will however provide a sample configuration for vdirsyncer in case you do
+want to go that route.</p>
+<p><code>~/.config/vdirsyncer/config</code></p>
+<pre tabindex="0"><code>[general]
 status_path = &#34;~/.local/share/vdirsyncer/status/&#34;
 
 [pair my_contacts]
@@ -522,16 +549,20 @@ password.fetch = [&#34;command&#34;, &#34;pass&#34;, &#34;dav.domain.com/user&#3
 <pre tabindex="0"><code>$ vdirsyncer discover
 </code></pre><pre tabindex="0"><code>$ vdirsyncer sync
 </code></pre><p>Then we can enable the systemd user timer to auto sync via <code>vdirsyncer.service</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ systemctl --user enable vdirsyncer.timer
-</span></span></code></pre></div>
+<pre tabindex="0"><code>$ systemctl --user enable vdirsyncer.timer
+</code></pre><h1 id="the-end">The End</h1>
+<p>That&rsquo;s pretty much it. Email management following the Unix Philosophy. I&rsquo;m sure
+that there are improvements I can make but I&rsquo;ll cross those bridges when I get
+there.</p>
+
 </content>
 <p>
   
-  <a href="http://localhost:1313/blog/cli/">#Cli</a>
+  <a href="https://cole.young.sh/blog/cli/">#Cli</a>
   
-  <a href="http://localhost:1313/blog/email/">#Email</a>
+  <a href="https://cole.young.sh/blog/email/">#Email</a>
   
-  <a href="http://localhost:1313/blog/tutorial/">#Tutorial</a>
+  <a href="https://cole.young.sh/blog/tutorial/">#Tutorial</a>
   
 </p>
 

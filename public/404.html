@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="shortcut icon" href="http://localhost:1313/images/favicon.png" />
+<link rel="shortcut icon" href="https://cole.young.sh/images/favicon.png" />
 <title>404</title>
 <meta name="title" content="404 Page not found" />
 <meta name="description" content="Hugo &#43; Bear = :heart:" />
-<meta name="keywords" content="" />
+<meta name="keywords" content="cli,email,tutorial," />
 
 
-<meta property="og:url" content="http://localhost:1313/404.html">
-  <meta property="og:site_name" content="Cole Young&#39;s Webpage">
+<meta property="og:url" content="https://cole.young.sh/404.html">
+  <meta property="og:site_name" content="Cole Young">
   <meta property="og:title" content="404 Page not found">
   <meta property="og:description" content="Hugo &#43; Bear = :heart:">
   <meta property="og:locale" content="en_US">
   <meta property="og:type" content="website">
-    <meta property="og:image" content="http://localhost:1313/images/share.png">
+    <meta property="og:image" content="https://cole.young.sh/images/share.png">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/images/share.png">
+  <meta name="twitter:image" content="https://cole.young.sh/images/share.png">
   <meta name="twitter:title" content="404 Page not found">
   <meta name="twitter:description" content="Hugo &#43; Bear = :heart:">
 
@@ -33,7 +33,7 @@
 
   <meta itemprop="name" content="404 Page not found">
   <meta itemprop="description" content="Hugo &#43; Bear = :heart:">
-  <meta itemprop="image" content="http://localhost:1313/images/share.png">
+  <meta itemprop="image" content="https://cole.young.sh/images/share.png">
 <meta name="referrer" content="no-referrer-when-downgrade" />
 
   <style>
@@ -143,6 +143,7 @@
       color: var(--code-color);
       padding-left: 20px;
       font-style: italic;
+      background-color: var(--code-background-color);
   }
 
   footer {
@@ -218,17 +219,32 @@
       --text-color: #cdd6f4;
       --link-color: #89b4fa;
       --visited-color: #cba6f7;
-      --code-background-color: #11111b;
+      --code-background-color: #181825;
       --code-color: #cdd6f4;
       --blockquote-color: #bac2de;
     }
   }
+
+  code {
+      font-family: Jetbrains Mono, sans-serif;
+      color: var(--code-color);
+      padding: 2px;
+      border-radius: 3px;
+  }
+
+  pre {
+      background-color: var(--code-background-color);
+      padding: 16px;
+      border-radius: 6px;
+      overflow-x: auto;
+  }
+
 </style>
 </head>
 
 <body>
   <header><a href="/" class="title">
-  <h2>Cole Young&#39;s Webpage</h2>
+  <h2>Cole Young</h2>
 </a>
 <nav><a href="/">Home</a>
 
