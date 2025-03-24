@@ -1,0 +1,36 @@
+<!-- A partial to be overwritten by the user.
+  Simply place a custom_head.html into
+  your local /layouts/partials-directory -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Color+Emoji&family=Noto+Emoji:wght@300..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+
+  :root {
+    --width: 720px;
+    --font-main: Jetbrains Mono, sans-serif;
+    --font-secondary: Jetbrains Mono, sans-serif;
+    --font-scale: 1em;
+    --background-color: #eff1f5;
+    --heading-color: #4c4f69;
+    --text-color: #4c4f69;
+    --link-color: #1e66f5;
+    --visited-color: #8839ef;
+    --code-background-color: #dce0e8;
+    --code-color: #4c4f69;
+    --blockquote-color: #5c5f77;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #1e1e2e;
+      --heading-color: #cdd6f4;
+      --text-color: #cdd6f4;
+      --link-color: #89b4fa;
+      --visited-color: #cba6f7;
+      --code-background-color: #11111b;
+      --code-color: #cdd6f4;
+      --blockquote-color: #bac2de;
+    }
+  }
+</style>
