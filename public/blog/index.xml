@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>blog on Cole Young</title>
-    <link>http://localhost:1313/blog/</link>
-    <description>Recent content in blog on Cole Young</description>
+    <title>/blog on [cole young] $</title>
+    <link>https://cole.young.sh/blog/</link>
+    <description>Recent content in /blog on [cole young] $</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Cole Young.</copyright>
     <lastBuildDate>Sun, 23 Mar 2025 21:53:40 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cole.young.sh/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Offline Email With Aerc</title>
-      <link>http://localhost:1313/offline-email-with-aerc/</link>
+      <link>https://cole.young.sh/offline-email-with-aerc/</link>
       <pubDate>Sun, 23 Mar 2025 21:53:40 -0400</pubDate>
-      <guid>http://localhost:1313/offline-email-with-aerc/</guid>
+      <guid>https://cole.young.sh/offline-email-with-aerc/</guid>
       <description>&lt;p&gt;Building an offline first email system the Unix way.&lt;/p&gt;&#xA;&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://aerc-mail.org/&#34;&gt;aerc&lt;/a&gt; - mail client&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://notmuchmail.org/&#34;&gt;notmuch&lt;/a&gt; - index + search mail&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://isync.sourceforge.io/mbsync.html&#34;&gt;mbsync&lt;/a&gt; - download mail&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/marlam/msmtp&#34;&gt;msmtp&lt;/a&gt; - send mail + send queue&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gitlab.com/shackra/goimapnotify&#34;&gt;goimapnotify&lt;/a&gt; - mailbox watcher&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.passwordstore.org/&#34;&gt;pass&lt;/a&gt; - password manager&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/cruegge/pam-gnupg&#34;&gt;pam-gnupg&lt;/a&gt; - unlock gpg keys&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/lucc/khard&#34;&gt;khard&lt;/a&gt; - contact management&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/jelmer/xandikos&#34;&gt;xandikos&lt;/a&gt; - contact server (optional)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/pimutils/vdirsyncer&#34;&gt;vdirsyncer&lt;/a&gt; - contact sync (optional)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;secret-management&#34;&gt;Secret Management&lt;/h1&gt;&#xA;&lt;p&gt;To avoid plain text secrets in config files. This guide uses pass to store all&#xA;the secrets these applications will need for the setup. Any password manager&#xA;that can be invoked via the command line will do so long as it prints the&#xA;password to standard out. I won&amp;rsquo;t go over how to setup pass because that&amp;rsquo;s out&#xA;of the scope of this guide. It&amp;rsquo;s a well documented project.&lt;/p&gt;</description>
     </item>
   </channel>

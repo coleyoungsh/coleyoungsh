@@ -6,7 +6,7 @@ baseURL = "https://cole.young.sh"
 theme = 'hugo-bearblog'
 
 # Basic metadata configuration for your blog.
-title = "Cole Young"
+title = "[cole young] $"
 author = "Cole Young"
 copyright = "Copyright © 2025, Cole Young."
 languageCode = "en-US"

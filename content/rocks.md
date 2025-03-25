@@ -1,5 +1,5 @@
 +++
-title = 'Rocks'
+title = '/rocks'
 menu = "main"
 +++
 
@@ -13,21 +13,39 @@ you like?".
 
 ## Software
 
+----------
+
 [aerc](https://aerc-mail.org/) - email client
+
+[arch linux](https://archlinux.org/) - a lightweight and flexible linux distribution
 
 [cmus](https://cmus.github.io/) - small, fast, and powerful cli music player
 
+[foot](https://codeberg.org/dnkl/foot) - fast, lightweight, and minimalistic wayland terminal emulator
+
 [dwm](https://dwm.suckless.org/) - dynamic window manager for X
+
+[hyprland](https://hyprland.org/) - a highly customizable dynamic tiling wayland compositor
+
+[neovim](https://neovim.io/) - hyperextensible vim-based text editor
+
+[newsboat](https://newsboat.org/) - rss/atom feed reader for the text console
 
 [pass](https://www.passwordstore.org/) - the standard unix password manager
 
 [remind](https://dianne.skoll.ca/projects/remind/)  - sophisticated calendar and alarm program
 
+[tmux](https://github.com/tmux/tmux) - a terminal multiplexer
+
 [todo.txt](https://github.com/todotxt/todo.txt) - plain text todo protocol
+
+[yazi](https://yazi-rs.github.io/) - blazing fast terminal file manager written in rust
 
 [zk](https://github.com/zk-org/zk) - plain text note taking assistant
 
 ## Books
+
+----------
 
 [The Noma Guide to Fermentation](https://www.goodreads.com/book/show/37590384-foundations-of-flavor) - René Redzepi, David Zilber
 
@@ -36,5 +54,7 @@ you like?".
 [On Food and Cooking](https://www.goodreads.com/book/show/101255.On_Food_and_Cooking?from_search=true&from_srp=true&qid=HIFkkuzJBw&rank=1) - Harold McGee
 
 ## Bands
+
+----------
 
 [emarosa](https://en.wikipedia.org/wiki/Emarosa) - post-hardcore

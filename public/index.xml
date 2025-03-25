@@ -1,27 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Cole Young</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content in Home on Cole Young</description>
+    <title>/home on [cole young] $</title>
+    <link>https://cole.young.sh/</link>
+    <description>Recent content in /home on [cole young] $</description>
     <generator>Hugo</generator>
     <language>en-US</language>
     <copyright>Copyright © 2025, Cole Young.</copyright>
     <lastBuildDate>Sun, 23 Mar 2025 21:53:40 -0400</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://cole.young.sh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Offline Email With Aerc</title>
-      <link>http://localhost:1313/offline-email-with-aerc/</link>
+      <link>https://cole.young.sh/offline-email-with-aerc/</link>
       <pubDate>Sun, 23 Mar 2025 21:53:40 -0400</pubDate>
-      <guid>http://localhost:1313/offline-email-with-aerc/</guid>
+      <guid>https://cole.young.sh/offline-email-with-aerc/</guid>
       <description>&lt;p&gt;Building an offline first email system the Unix way.&lt;/p&gt;&#xA;&lt;h2 id=&#34;applications&#34;&gt;Applications&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://aerc-mail.org/&#34;&gt;aerc&lt;/a&gt; - mail client&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://notmuchmail.org/&#34;&gt;notmuch&lt;/a&gt; - index + search mail&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://isync.sourceforge.io/mbsync.html&#34;&gt;mbsync&lt;/a&gt; - download mail&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/marlam/msmtp&#34;&gt;msmtp&lt;/a&gt; - send mail + send queue&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://gitlab.com/shackra/goimapnotify&#34;&gt;goimapnotify&lt;/a&gt; - mailbox watcher&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.passwordstore.org/&#34;&gt;pass&lt;/a&gt; - password manager&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/cruegge/pam-gnupg&#34;&gt;pam-gnupg&lt;/a&gt; - unlock gpg keys&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/lucc/khard&#34;&gt;khard&lt;/a&gt; - contact management&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/jelmer/xandikos&#34;&gt;xandikos&lt;/a&gt; - contact server (optional)&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/pimutils/vdirsyncer&#34;&gt;vdirsyncer&lt;/a&gt; - contact sync (optional)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h1 id=&#34;secret-management&#34;&gt;Secret Management&lt;/h1&gt;&#xA;&lt;p&gt;To avoid plain text secrets in config files. This guide uses pass to store all&#xA;the secrets these applications will need for the setup. Any password manager&#xA;that can be invoked via the command line will do so long as it prints the&#xA;password to standard out. I won&amp;rsquo;t go over how to setup pass because that&amp;rsquo;s out&#xA;of the scope of this guide. It&amp;rsquo;s a well documented project.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>Rocks</title>
-      <link>http://localhost:1313/rocks/</link>
+      <title>/projects</title>
+      <link>https://cole.young.sh/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/rocks/</guid>
-      <description>&lt;h1 id=&#34;stuff-that-rocks&#34;&gt;Stuff that rocks&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;A collection of things that I enjoy or that have a similar set of&#xA;philosophies to my own. This is the best place to answer the question &amp;ldquo;What do&#xA;you like?&amp;rdquo;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aerc-mail.org/&#34;&gt;aerc&lt;/a&gt; - email client&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cmus.github.io/&#34;&gt;cmus&lt;/a&gt; - small, fast, and powerful cli music player&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dwm.suckless.org/&#34;&gt;dwm&lt;/a&gt; - dynamic window manager for X&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.passwordstore.org/&#34;&gt;pass&lt;/a&gt; - the standard unix password manager&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dianne.skoll.ca/projects/remind/&#34;&gt;remind&lt;/a&gt;  - sophisticated calendar and alarm program&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/todotxt/todo.txt&#34;&gt;todo.txt&lt;/a&gt; - plain text todo protocol&lt;/p&gt;</description>
+      <guid>https://cole.young.sh/projects/</guid>
+      <description>&lt;h1 id=&#34;bmks&#34;&gt;bmks&lt;/h1&gt;&#xA;&lt;p&gt;The unix bookmark management that &lt;a href=&#34;https://suckless.org/philosophy/&#34;&gt;sucks less&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;p&gt;browse: &lt;code&gt;ssh git.young.sh -t bmks&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;clone: &lt;code&gt;git clone git@git.young.sh:bmks&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;Also available as a dmenu script at &lt;a href=&#34;https://tools.suckless.org/dmenu/scripts/&#34;&gt;suckless.org&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;make-total-deploy&#34;&gt;make-total-deploy&lt;/h1&gt;&#xA;&lt;p&gt;Makefile based provisioning of my Arch Linux workstation. Servers to come.&lt;/p&gt;&#xA;&lt;p&gt;browse: &lt;code&gt;ssh git.young.sh -t make-total-deploy&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;clone: &lt;code&gt;git clone git@git.young.sh:make-total-deploy&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;grs-git-repo-sync&#34;&gt;grs (git-repo-sync)&lt;/h1&gt;&#xA;&lt;p&gt;&lt;strong&gt;WIP&lt;/strong&gt;: Portable git based file sync&lt;/p&gt;&#xA;&lt;p&gt;browse: &lt;code&gt;ssh git.young.sh -t git-repo-sync&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;clone: &lt;code&gt;git clone git@git.young.sh:git-repo-sync&lt;/code&gt;&lt;/p&gt;&#xA;&lt;h1 id=&#34;dwm-my-fork&#34;&gt;dwm (my fork)&lt;/h1&gt;&#xA;&lt;p&gt;Heavily patched dwm build (&lt;a href=&#34;https://github.com/coleyoungsh/dwm/tree/main/patches&#34;&gt;patches applied&lt;/a&gt;)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>/rocks</title>
+      <link>https://cole.young.sh/rocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://cole.young.sh/rocks/</guid>
+      <description>&lt;h1 id=&#34;stuff-that-rocks&#34;&gt;Stuff that rocks&lt;/h1&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;A collection of things that I enjoy or that have a similar set of&#xA;philosophies to my own. This is the best place to answer the question &amp;ldquo;What do&#xA;you like?&amp;rdquo;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;software&#34;&gt;Software&lt;/h2&gt;&#xA;&lt;hr&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://aerc-mail.org/&#34;&gt;aerc&lt;/a&gt; - email client&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://archlinux.org/&#34;&gt;arch linux&lt;/a&gt; - a lightweight and flexible linux distribution&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://cmus.github.io/&#34;&gt;cmus&lt;/a&gt; - small, fast, and powerful cli music player&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://codeberg.org/dnkl/foot&#34;&gt;foot&lt;/a&gt; - fast, lightweight, and minimalistic wayland terminal emulator&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://dwm.suckless.org/&#34;&gt;dwm&lt;/a&gt; - dynamic window manager for X&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
