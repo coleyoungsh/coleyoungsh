@@ -12,13 +12,17 @@ philosophies to my own.
 
 ## Software
 
-### email
+[aerc](https://aerc-mail.org/) - email client
 
-[aerc](https://aerc-mail.org/) - terminal mail client
-
-### window managers
+[cmus](https://cmus.github.io/) - small, fast, and powerful cli music player
 
 [dwm](https://dwm.suckless.org/) - dynamic window manager for X
+
+[remind](https://dianne.skoll.ca/projects/remind/)  - sophisticated calendar and alarm program
+
+[todo.txt](https://github.com/todotxt/todo.txt) - plain text todo protocol
+
+[zk](https://github.com/zk-org/zk) - plain text note taking assistant
 
 ## Books
 
