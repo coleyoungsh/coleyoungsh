@@ -5,15 +5,11 @@ menu = "main"
 
 # Stuff that rocks
 
----
-
 A collection of things that I enjoy or that have a similar set of
 philosophies to my own. This is the best place to answer the question "What do
 you like?".
 
 ## Software
-
-----------
 
 [aerc](https://aerc-mail.org/) - email client
 
@@ -45,8 +41,6 @@ you like?".
 
 ## Books
 
-----------
-
 [The Noma Guide to Fermentation](https://www.goodreads.com/book/show/37590384-foundations-of-flavor) - René Redzepi, David Zilber
 
 [The Art of Fermentation](https://www.goodreads.com/book/show/13598307-the-art-of-fermentation?from_search=true&from_srp=true&qid=psoqbI9Q4n&rank=1) - Sandor Ellix Katz
@@ -54,7 +48,5 @@ you like?".
 [On Food and Cooking](https://www.goodreads.com/book/show/101255.On_Food_and_Cooking?from_search=true&from_srp=true&qid=HIFkkuzJBw&rank=1) - Harold McGee
 
 ## Bands
-
-----------
 
 [emarosa](https://en.wikipedia.org/wiki/Emarosa) - post-hardcore
