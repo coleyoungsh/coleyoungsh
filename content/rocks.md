@@ -11,7 +11,9 @@ you like?".
 
 ## Software
 
-[aerc](https://aerc-mail.org/) - email client
+### On the Desktop
+
+[aerc](https://aerc-mail.org/) - an email client that runs in your terminal
 
 [arch linux](https://archlinux.org/) - a lightweight and flexible linux distribution
 
@@ -38,6 +40,18 @@ you like?".
 [yazi](https://yazi-rs.github.io/) - blazing fast terminal file manager written in rust
 
 [zk](https://github.com/zk-org/zk) - plain text note taking assistant
+
+### On the Server
+
+[docker-mailserver](https://github.com/docker-mailserver/docker-mailserver) - a production-ready fullstack but simple containerized mail server
+
+[miniflux](https://miniflux.app/) - a minimalist and opinionated feed reader
+
+[msmtp](https://github.com/marlam/msmtp) - smtp client with sendmail compatible interface
+
+[softserve](https://github.com/charmbracelet/soft-serve) - a tasty, self-hostable git server for the command line 🍦
+
+[xandikos](https://github.com/jelmer/xandikos) - lightweight yet complete CardDAV/CalDAV server that backs onto a git repository
 
 ## Books
 
