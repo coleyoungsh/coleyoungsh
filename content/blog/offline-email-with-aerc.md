@@ -25,7 +25,7 @@ Building an offline first email system the Unix way.
 - [khard](https://github.com/lucc/khard) - contact management
 - [xandikos](https://github.com/jelmer/xandikos) - contact server (optional)
 - [vdirsyncer](https://github.com/pimutils/vdirsyncer) - contact sync (optional)
-
+ 
 # Secret Management
 
 To avoid plain text secrets in config files. This guide uses pass to store all

@@ -7,8 +7,9 @@ menu = "main"
 
 ---
 
-A collection of things that I think are neat or that have a similar set of
-philosophies to my own.
+A collection of things that I enjoy or that have a similar set of
+philosophies to my own. This is the best place to answer the question "What do
+you like?".
 
 ## Software
 
@@ -17,6 +18,8 @@ philosophies to my own.
 [cmus](https://cmus.github.io/) - small, fast, and powerful cli music player
 
 [dwm](https://dwm.suckless.org/) - dynamic window manager for X
+
+[pass](https://www.passwordstore.org/) - the standard unix password manager
 
 [remind](https://dianne.skoll.ca/projects/remind/)  - sophisticated calendar and alarm program
 
