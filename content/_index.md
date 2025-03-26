@@ -22,7 +22,7 @@ and cooking nerd. I'm also a husband and father of two. That's where I get all
 my patience to fix Arch Linux if it breaks and spend hours configuring
 software. I'll expand this later but that should suffice for now. Have a look
 around and try not to break anything. But, if you do see something broken, it's
-definitely supposed to happen that way. Just trust me.
+definitely supposed to be that way. Just trust me.
 
 <!-- ## Technologies -->
 <!-- - linux -->
