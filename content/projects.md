@@ -31,7 +31,7 @@ Makefile based provisioning of my Arch Linux workstation. Servers to come. Yes, 
 
 # dwm (my fork)
 
-Heavily patched dwm build ([patches applied](https://github.com/coleyoungsh/dwm/tree/main/patches))
+Heavily patched dwm build ([patches applied](https://git.young.sh/cole/dwm/src/branch/main/patches))
 
 **browse:** [dwm](https://git.young.sh/cole/dwm) 
 
