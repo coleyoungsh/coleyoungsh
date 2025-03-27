@@ -7,9 +7,9 @@ menu = "main"
 
 The unix bookmark management that [sucks less](https://suckless.org/philosophy/).
 
-**browse:** `ssh git.young.sh -t bmks`
+**browse:** [bmks](https://git.young.sh/cole/bmks)
 
-**clone:** `git clone git@git.young.sh:bmks`
+**clone:** `git clone https://git.young.sh/cole/bmks.git`
 
 Also available as a dmenu script at [suckless.org](https://tools.suckless.org/dmenu/scripts/)
 
@@ -17,25 +17,25 @@ Also available as a dmenu script at [suckless.org](https://tools.suckless.org/dm
 
 Makefile based provisioning of my Arch Linux workstation. Servers to come. Yes, the name is a [reference](https://www.youtube.com/watch?v=spCmStMOiHE)!
 
-**browse:** `ssh git.young.sh -t make-total-deploy`
+**browse:** [make-total-deploy](https://git.young.sh/cole/make-total-deploy) 
 
-**clone:** `git clone git@git.young.sh:make-total-deploy`
+**clone:** `git clone https://git.young.sh/cole/make-total-deploy.git`
 
 # grs (git-repo-sync)
 
 \* **WIP** \* Portable git based file sync
 
-**browse:** `ssh git.young.sh -t git-repo-sync`
+**browse:** [git-repo-sync](https://git.young.sh/cole/git-repo-sync)
 
-**clone:** `git clone git@git.young.sh:git-repo-sync`
+**clone:** `git clone https://git.young.sh/cole/git-repo-sync.git`
 
 # dwm (my fork)
 
 Heavily patched dwm build ([patches applied](https://github.com/coleyoungsh/dwm/tree/main/patches))
 
-**browse:** [dwm](https://github.com/coleyoungsh/dwm) 
+**browse:** [dwm](https://git.young.sh/cole/dwm) 
 
-**clone:** `git clone https://github.com/coleyoungsh/dwm.git`
+**clone:** `git clone https://git.young.sh/cole/dwm.git`
 
 # supid
 

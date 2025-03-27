@@ -10,9 +10,9 @@ title = "/home"
 
 Email: cole@young.sh ([pgp-key](pub.key))
 
-Git server: `ssh git.young.sh`
+Git server: [git.young.sh](https://git.young.sh/cole) 
 
-Github: [coleyoungsh](https://github.com/coleyoungsh) (don't use much anymore)
+Github: [coleyoungsh](https://github.com/coleyoungsh) (mirror of my git server)
 
 
 # About
