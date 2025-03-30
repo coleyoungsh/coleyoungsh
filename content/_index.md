@@ -5,15 +5,13 @@
 title = "/home"
 +++
 
-
 # Links
 
-Email: cole@young.sh ([pgp-key](pub.key))
+**Email:** cole@young.sh ([pgp-key](pub.key))
 
-Git server: [git.young.sh](https://git.young.sh/cole) 
+**Git server:** [git.young.sh](https://git.young.sh/cole)
 
-Github: [coleyoungsh](https://github.com/coleyoungsh) (mirror of my git server)
-
+**Github:** [coleyoungsh](https://github.com/coleyoungsh) (mirror of my git server)
 
 # About
 
@@ -24,8 +22,13 @@ software. I'll expand this later but that should suffice for now. Have a look
 around and try not to break anything. But, if you do see something broken, it's
 definitely supposed to be that way. Just trust me.
 
-<!-- ## Technologies -->
-<!-- - linux -->
-<!-- - git -->
-<!-- - docker -->
-<!-- - shell scripting -->
+## Technologies I Work With
+
+- linux
+- git
+- docker
+- nginx
+- hugo
+- shell scripting
+- wireguard
+- ansible
